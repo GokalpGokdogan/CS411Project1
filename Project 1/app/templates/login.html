@@ -1,0 +1,112 @@
+<body style="background-color: #121212; margin: 0; color: #e0e0e0; font-family: 'Roboto', sans-serif;">
+    <div class="container" style="width: 100%; padding: 2% 0; text-align: center;">
+        <h2>Login</h2>
+        <p>Please fill in this form to login to your account.</p>
+        <hr style="width: 80%; border: 1px solid #333;">
+    </div>
+    <form action="{{ url_for('login') }}" method="post" class="genForm">
+        {% if message is defined and message == "Logged in successfully!" %}
+            <div class="feedback">{{ message }}</div>
+        {% endif %}
+        {% if message is defined and message == "Please enter correct email / password!" %}
+            <div class="feedback" style="background-color: tomato;">{{ message }}</div>
+        {% endif %}
+
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter password">
+        </div>
+
+        <div class="form-group">
+            <label for="role">Role:</label>
+            <select id="role" name="role">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</body>
+<style>
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+    }
+
+    .container {
+        width: 100%;
+        padding: 2% 0;
+        text-align: center;
+    }
+
+    .genForm {
+        width: 50%;
+        margin: auto;
+        margin-top: 5%;
+        background-color: #1e1e1e;
+        padding: 2%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-group input, .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #333;
+        border-radius: 5px;
+        background-color: #2c2c2c;
+        color: #e0e0e0;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: #6200ea;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #3700b3;
+    }
+
+    .btn-secondary {
+        background-color: #03dac6;
+        color: black;
+    }
+
+    .btn-secondary:hover {
+        background-color: #018786;
+    }
+
+    .feedback {
+        background-color: #018786;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+</style>
