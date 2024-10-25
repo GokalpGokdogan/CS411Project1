@@ -12,4 +12,6 @@ To run the project:
 
 4- The application runs on http://localhost:5000/
 
-5- The valid username: user, password: user123
+5- Valid username: user, password: user123, role: User \
+        username: admin, password: admin123, role: Admin
+
