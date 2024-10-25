@@ -9,3 +9,7 @@ To run the project:
 
 3- To run the flask app, run the command below in terminal or just click to the RUN button in PyCharm:\
     python app.py
+
+4- The application runs on http://localhost:5000/
+
+5- The valid username: user, password: user123
